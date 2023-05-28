@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+body{
+    margin: 0;
+}
+h1,h2,h3,p,li,button{
+    font-family: 'PT Sans';
+    margin: 0;
+}
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+}
+/* стилизуем кнопку */
+.menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    z-index: 1;
+}
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+/* контейнер меню */
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+}
+/* элементы меню */
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    text-decoration: none;
+}
+.menu__item:hover{
+    background: rgba(0,0,0,0.4);
+}
+#menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.banner {
+    background-color: #81B29A;
+    padding-top: 30px;
+}
+header {
+    background-color: #81B29A;
+}
+h2{
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+.info{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.banner-title{
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 65px;
+    text-align: center;
+    
+    color: #2B2D42;    
+}
+.banner-text{
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: #2B2D42;
+    
+    margin-bottom: 30px;
+}
+.banner-img{
+    width: 151px;
+    height: 225px;
+}
+.wrap{
+    text-align: center;
+}
+.info_inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.info-title{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 65px;
+    text-align: center;
+    color: black;
+}
+.info-text{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: black;
+}
+.info-img{
+    width: 70%;
+}
+.channels-img{
+    width: 50%;
+}
+.button{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 25px 100px;
+    text-decoration: none;
+    border: 5px solid #2B2D42;
+    background-color: transparent;
+    margin: 0 auto;
+
+    color: #2B2D42;
+}
+.channels{
+    background-color: #2B2D42;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.channels-title{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 65px;
+
+    /* identical to box height */
+    text-align: center;
+
+    color: #FFFFFF;
+}
+.channels-text{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: #FFFFFF;
+}
+
+.roles{
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.roles-title{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 65px;
+
+    /* identical to box height */
+    text-align: center;
+
+    color: black;
+}
+.roles-text{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: black;
+}
+
+footer{
+    background-color: #F2CC8F;
+    padding: 25px;
+    text-align: right;
+}
+button{
+    cursor: pointer;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+.social-icons>li {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+.social-icons a {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.social-icons a img{
+    height: 100%;
+}
+
+
+@media (min-width: 768px) and (max-width: 991px){
+    .banner-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+@media (min-width: 768px){
+    header,nav{
+        width: 100%;
+    }
+    .menu__btn{
+        display: none;
+    }
+    .menu__box{
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        visibility: visible;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        text-align: center;
+        background-color: transparent;
+    }
+    li{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 31px;
+        margin: 0;
+    }
+
+    .menu__item:hover {
+        background-color: transparent;
+      }
+    .photo{
+        display: flex;
+        padding: 60px;
+    }
+    .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #2B2D42;
+        text-decoration: none;
+    }
+}
+
+/*  планшеты горизонтально  */
+@media ((min-width: 990px) and (max-width: 1200px)){
+    header, nav{
+        width: 100%;
+    }
+    .menu__btn{
+        display: none;
+    }
+
+    .menu__box {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        visibility: visible;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        text-align: center;
+        background-color: transparent;
+      }
+
+    li{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 31px;
+        margin: 0;
+    }
+
+    .menu__item:hover {
+        background-color: transparent;
+      }
+    
+    .banner{
+        padding-bottom: 190px;
+    }
+
+    h1{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 83px;
+        margin-top: 80px;
+    }
+
+    .p_banner{
+        margin-left: 50%;
+    }
+
+    .button{
+        font-size: 24px;
+        height: 65px;
+        margin-top: 40px;
+    }
+
+    h2{
+        font-size: 36px;
+        line-height: 47px;
+        margin-bottom: 50px;
+    }
+
+    .photo{
+        padding-top: 150px;
+        padding-bottom: 150px;
+        display: flex;
+        align-items: center;
+    }
+    .example{
+        width: 450px;
+    }
+
+    .text{
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    p{
+        font-size: 24px;
+    }
+    .container{
+        flex-direction: row;
+    }
+    .wrap{
+        margin-left: 10%;
+    }
+    .banner-img{
+        margin-left: 10%;
+    }
+    footer p {
+        font-size: 20px;
+    }
+}
+
+/*  десктопы  */
+@media (min-width: 1200px){
+    .menu__box{
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    h1{
+        font-size: 72px;
+        line-height: 93px;
+        width: 600px;
+    }
+
+    .photo_inner{
+        width: 600px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .banner-container{
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .wrap{
+        margin-left: 10%;
+    }
+    .banner-img{
+        margin-left: 20%;
+    }
+    .button{
+        margin-bottom: 20px;
+    }
+    .channels-img {
+        width: 30%;
+    }
+}

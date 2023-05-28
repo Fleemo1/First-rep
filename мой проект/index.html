@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой проект</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                  <span></span>
+                </label>
+                <ul class="menu__box">
+                  <li><a class="menu__item" href="#info">ПРИМЕР</a></li>
+                  <li><a class="menu__item" href="#channels">КАНАЛЫ</a></li>
+                  <li><a class="menu__item" href="#roles">РОЛИ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section class="banner">
+            <div class="container banner-container">
+                <img class="banner-img" src="images/discord.png" alt="discord">
+                <div class="wrap"> 
+                    <h1 class="banner-title">Первое взаимодействие с дискордом</h1>
+                    <p class="banner-text">Коротко о Discord</p>
+                    <button class="button" href="#">ЧИТАТЬ</button>
+                </div>
+            </div>
+        </section>
+        <section class="info" id="info">
+            <div class="container">
+                <div class="info_inner">
+                    <h2 class="info-title">Что такое сервер?</h2>
+                    <p class="info-text">Сервер - это группа в Discord, которая предназначена для общения сразу с несколькими пользователями, в чате и в аудио каналах</p>
+                </div>
+                <img class="info-img" alt="photo" src="images/example.png">
+            </div>
+        </section>
+        <section class="channels" id="channels">
+            <div class="container">
+                <div class="info_inner">
+                    <h2 class="channels-title">КАНАЛЫ</h2>
+                    <p class="channels-text">Каналы в дискорде есть разных категорий, каждый по своей теме. Пример: </p>
+                </div>
+                <img class="channels-img" alt="photo" src="images/channels.png">
+            </div>
+        </section>
+        <section class="roles" id="roles">
+            <div class="container">
+                <div class="info_inner">
+                    <h2 class="roles-title">РОЛИ</h2>
+                    <p class="roles-text">Роли это параметры пользователей серверов. Они определяют цвет участника в списке, его права, и место в списке. </p>
+                </div>
+                <img class="channels-img" alt="photo" src="images/rolessettings.png">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p class="p_footer">@2023 Все права защищены</p>
+        <ul class="social-icons">
+
+            <li><a class="social-icon" href="https://vk.com/fleemo_1"><img src="images/vk.png" alt="vk"></a></li>
+        </ul>
+    </footer>
+    <script>
+        $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+        
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 500, 'linear');
+        });
+    </script>
+</body>
+</html>
